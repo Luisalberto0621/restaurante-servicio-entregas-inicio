@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restaurante Delicias</title>
+
+        <!-- CSS: Bootstrap y estilos del proyecto -->
+        <link rel="stylesheet" href="{% static 'restaurant_app/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'restaurant_app/css/main.css' %}">
+    </head>
+
+    <body>
+
+        <!-- Navbar común a todas las páginas -->
+        <header>
+            {% block navbar %} {% endblock %}
+        </header>
+
+        <!-- Contenido principal -->
+        <main>
+            {% block content %} {% endblock %}
+        </main>
+
+        <!-- Footer común -->
+        <footer>
+            {% block footer %} {% endblock %}
+        </footer>
+        
+    </body>
+</html>

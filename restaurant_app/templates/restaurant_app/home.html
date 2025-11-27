@@ -1,0 +1,315 @@
+{% extends 'restaurant_app/base.html' %}
+{% load static %}
+
+{% block navbar %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <!-- Logo/Marca del restaurante -->
+        <a class="navbar-brand fw-bold" href="#">
+            <img src="{% static 'restaurant_app/img/hero.jpg' %}" alt="Logo Restaurante" class="logo-navbar" style="width: 80px; height: 80px; object-fit: contain;background-color: #fff; border-radius: 50%;">
+            <span class="text-warning"></span>  Restaurante Delicias
+        </a>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-bar mx-3" style="flex-grow: 1; max-width: 450px;">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar producto..." aria-label="Buscar producto">
+                <button class="btn btn-outline-light" type="button">
+                    🔍
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú y carrito -->
+        <div class="navbar-nav ms-auto align-items-center">
+            <a class="nav-link active" href="#">Inicio</a>
+            <a class="nav-link" href="#">Historial de Pedidos</a>
+            
+            <!-- Botones de Inicio de Sesión y Registro -->
+            <div class="d-flex ms-3">
+                <button class="btn btn-outline-light me-2">Iniciar Sesión</button>
+                <button class="btn btn-warning fw-bold">Registrarse</button>
+            </div>
+            
+            <!-- Botón del carrito de compra -->
+            <button class="btn btn-outline-light position-relative ms-3" id="carrito-btn">
+                🛒 Carrito
+                <span id="carrito-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </button>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<!-- Banner de Ofertas -->
+<div class="alert alert-warning text-center mb-0 rounded-0 border-0">
+    <div class="container">
+        🎉 <strong>OFERTA ESPECIAL:</strong> 2x1 en pizzas los martes • 
+        <strong>20% OFF</strong> en tu primer pedido • 
+        🚚 <strong>Envío gratis</strong> sobre $15
+    </div>
+</div>
+
+<!-- sección Hero -->
+<section class="hero-section bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4 fw-bold mb-3">Restaurante Delicias</h1>
+                <p class="lead mb-4">Sabores auténticos, entregas rápidas, experiencias inolvidables</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-light btn-lg me-3 fw-bold">📋 Ver Menú Completo</button>
+                    <button class="btn btn-outline-light btn-lg">📞 Contáctanos</button>
+                </div>
+                
+                <!-- Estadísticas destacadas del negocio-->
+                <div class="row mt-3 text-center">
+                    <div class="col-4">
+                        <div class="stat-item">
+                            <h4 class="fw-bold mb-1">500+</h4>
+                            <small>Pedidos Mensuales</small>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-item">
+                            <h4 class="fw-bold mb-1">4.8★</h4>
+                            <small>Clasificación del Cliente</small>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-item">
+                            <h4 class="fw-bold mb-1">30</h4>
+                            <small>Entrega Promedio</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <!-- Imagen representativa del negocio -->
+                <div class="hero-img-container">
+                    <img src="{% static 'restaurant_app/img/hero9.jpg' %}" alt="Imagen Funcionamiento de Negocio" class="hero-img img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Beneficios -->
+<section class="benefits-section py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">¿Por Qué Elegirnos?</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="benefit-card p-2 bg-white rounded shadow-sm h-100">
+                    <span class="display-4 text-primary"></span>
+                    <div class="category-img-wrapper">
+                            <img src="{% static 'restaurant_app/img/hero1.jpg' %}" alt="Servicio de Entregas" class="img-fluid mb-2" style="max-width:265px; border-radius: .5rem;">
+                    </div>
+                    <h4 class="text-primary mt-3">Entrega Express</h4>
+                    <p class="text-muted">Entregamos en 30-45 minutos garantizado o es gratis</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="benefit-card p-4 bg-white rounded shadow-sm h-100">
+                    <span class="benefit-icon text-success">⭐</span>
+                    <h4 class="text-success mt-3">Calidad Premium</h4>
+                    <p class="text-muted">Ingredientes frescos y recetas tradicionales con 4.8/5 en reseñas</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="benefit-card p-4 bg-white rounded shadow-sm h-100">
+                    <span class="display-4 text-info"></span>
+                     <div class="category-img-wrapper">
+                            <img src="{% static 'restaurant_app/img/hero2.jpg' %}" alt="Tarjetas de Pago" class="img-fluid mb-3" style="max-width:290px; min-height: 200px ; border-radius:.5rem;">
+                        </div>
+                    <h4 class="text-info mt-3">Pago Seguro</h4>
+                    <p class="text-muted">Múltiples métodos de pago y transacciones 100% seguras</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Categorías -->
+<section class="categories-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Explora Nuestras Categorías</h2>
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-4">
+                <a href="#pizzas" class="category-link text-decoration-none">
+                    <div class="category-card p-4 bg-white rounded shadow-sm border h-100">
+                        <span class="display-1"></span>
+                        <div class="category-img-wrapper">
+                            <img src="{% static 'restaurant_app/img/hero3.jpg' %}" alt="Pizza" class="img-fluid mb-3" style="max-width:320px; min-height: 210px; border-radius:.5rem;">
+                        </div>
+                        <h5 class="text-dark mt-2">Pizzas</h5>
+                        <small class="text-muted">12 variedades</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <a href="#hamburguesas" class="category-link text-decoration-none">
+                    <div class="category-card p-4 bg-white rounded shadow-sm border h-100">
+                        <span class="display-1">
+                        </span>
+                        <div class="category-img-wrapper">
+                            <img src="{% static 'restaurant_app/img/hero4.jpg' %}" alt="Hamburguesa" class="img-fluid mb-3" style="max-width:340px; min-height: 210px; border-radius:.5rem;">
+                        </div>
+                        <h5 class="text-dark mt-2">Hamburguesas</h5>
+                        <small class="text-muted">8 especialidades</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <a href="#ensaladas" class="category-link text-decoration-none">
+                    <div class="category-card p-4 bg-white rounded shadow-sm border h-100">
+                        <span class="display-1"></span>
+                        <div class="category-img-wrapper">
+                            <img src="{% static 'restaurant_app/img/hero5.jpg' %}" alt="Ensalada" class="img-fluid mb-3" style="max-width:350px; min-height: 210px; border-radius:.5rem;">
+                        </div>
+                        <h5 class="text-dark mt-2">Ensaladas</h5>
+                        <small class="text-muted">6 opciones frescas</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <a href="#pastas" class="category-link text-decoration-none">
+                    <div class="category-card p-4 bg-white rounded shadow-sm border h-100">
+                        <span class="display-1"></span>
+                        <div class="category-img-wrapper">
+                            <img src="{% static 'restaurant_app/img/hero6.jpg' %}" alt="Pasta" class="img-fluid mb-3" style="max-width:340px; min-height: 220px; border-radius:.5rem;">
+                        </div>
+                        <h5 class="text-dark mt-2">Pastas</h5>
+                        <small class="text-muted">10 recetas italianas</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Funcionamiento del sistema -->
+<section class="how-it-works py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">¿Cómo Funciona Nuestro Sistema?</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <a class="text-decoration-none" href="#selecciona">
+                    <div class="category-card p-3 bg-white rounded shadow-sm border h-100 d-flex flex-column align-items-center justify-content-center">
+                        <div class="step-icon mb-2">📱</div>
+                        <h5 class="text-dark mb-1">Selecciona</h5>
+                        <p class="step-text">Explora el menú y elige</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <a class="text-decoration-none" href="#personaliza">
+                    <div class="category-card p-3 bg-white rounded shadow-sm border h-100 d-flex flex-column align-items-center justify-content-center">
+                        <div class="step-icon mb-2">🛒</div>
+                        <h5 class="text-dark mb-1">Personaliza</h5>
+                        <p class="step-text">Añade extras y personaliza</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <a class="text-decoration-none" href="#confirma">
+                    <div class="category-card p-3 bg-white rounded shadow-sm border h-100 d-flex flex-column align-items-center justify-content-center">
+                        <div class="step-icon mb-2">✅</div>
+                        <h5 class="text-dark mb-1">Confirma</h5>
+                        <p class="step-text">Revisa y completa tu pedido</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Información de Contacto -->
+<section class="contact-info py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 text-center mb-4">
+                <div class="info-item">
+                    <span class="display-6 mb-3">⏰</span>
+                    <h5>Horarios</h5>
+                    <p class="mb-0">Lunes a Domingo<br>11:00 AM - 11:00 PM</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <div class="info-item">
+                    <span class="display-6 mb-3">📞</span>
+                    <h5>Teléfono</h5>
+                    <p class="mb-0">(555) 123-4567<br>Pedidos y reservas</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <div class="info-item">
+                    <span class="display-6 mb-3">📍</span>
+                    <h5>Dirección</h5>
+                    <p class="mb-0">Calle Principal #123<br>Centro, Ciudad</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <div class="info-item">
+                    <span class="display-6 mb-3">💳</span>
+                    <h5>Métodos de Pago</h5>
+                    <p class="mb-0">Efectivo, Tarjetas<br>Digitales</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+<!-- Footer de la página -->
+{% block footer %}
+<footer class="bg-secondary text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold"> Restaurante Delicias</h5>
+                <p class="mb-2">Sabores auténticos entregados a tu puerta. Calidad y servicio desde 2020.</p>
+                <div class="contact-info">
+                    <p class="mb-1"> info@delicias.com</p>
+                    <p class="mb-0"> Pedidos online 24/7</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold">Explora</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none"> Inicio</a></li>
+                    <li><a href="#" class="text-white text-decoration-none"> Menú Completo</a></li>
+                    <li><a href="#" class="text-white text-decoration-none"> Promociones</a></li>
+                    <li><a href="#" class="text-white text-decoration-none"> Sobre Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold">Síguenos en</h5>
+                <div class="social-links">
+                    <img src="{% static 'restaurant_app/img/hero7.jpg' %}" alt="Logo Facebook" class="img-fluid mb-3" style="max-width:40px;">
+                    <a href="#" class="text-white text-decoration-none me-3"> Facebook</a>
+
+                    <img src="{% static 'restaurant_app/img/hero8.jpg' %}" alt="Logo Instagram" class="img-fluid mb-3" style="max-width:40px;">
+                    <a href="#" class="text-white text-decoration-none me-3"> Instagram</a>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4 bg-light">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0">&copy; 2025 Restaurante Delicias. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white text-decoration-none me-3"> Términos y Condiciones</a>
+                <a href="#" class="text-white text-decoration-none"> Política de Privacidad</a>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

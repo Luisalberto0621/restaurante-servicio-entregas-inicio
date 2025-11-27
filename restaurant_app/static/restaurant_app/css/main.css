@@ -1,0 +1,239 @@
+/* Estilos Personalizados para la página */
+
+/* Variables de colores */
+:root {
+  --primary-color: #2c5aa0;
+  --secondary-color: #ff6b35;
+  --accent-color: #ffc107;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Navbar personalizada */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 0.8rem 0;
+}
+
+.navbar .container {
+  max-width: 90%;
+}
+
+.navbar-brand img {
+  background-color: var(--light-color);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+  white-space: nowrap;
+}
+
+.search-bar .input-group {
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  border: none;
+  padding: 0.75rem 1.25rem;
+}
+
+.search-bar button {
+  border: none;
+  padding: 0 1.25rem;
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+  font-weight: bold;
+}
+
+.search-bar button:hover {
+  background-color: #e0a800;
+}
+
+/* Banner de ofertas */
+.alert-warning {
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  color: #000;
+  font-weight: 500;
+  padding: 0.75rem 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.9; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+/* Sección Hero */
+
+.hero-img {
+  max-width: 160%;
+  margin-right: -350px;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), #1e3d6f) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320,480,320,384,320,288,320,192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.stat-item {
+  padding: 0.5rem;
+}
+
+.stat-item h4 {
+  color: var(--accent-color);
+}
+
+/* Tarjetas de beneficios y categorías */
+.benefit-card, .category-card {
+  transition: all 0.3s ease;
+  border: none !important;
+}
+
+.benefit-card:hover, .category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.benefit-card {
+  border-top: 4px solid transparent !important;
+}
+
+.benefit-card:hover {
+  border-top-color: var(--primary-color) !important;
+}
+
+.benefit-icon {
+  font-size: 9rem;
+  line-height: 1;
+  margin-bottom: 5rem;
+  display: block;
+}
+
+.categories-section .container {
+  max-width: 90%;
+}
+
+.category-img-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.category-card {
+  padding: 2rem;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botones */
+.btn {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-lg {
+  padding: 0.75rem 2rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #1e3d6f;
+  border-color: #1e3d6f;
+  transform: translateY(-2px);
+}
+
+.btn-warning {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #000;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Sección "Cómo funciona" */
+.how-it-works .category-card {
+  padding: 1.5rem;
+  border-radius: .6rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-it-works .step-icon {
+  font-size: 6rem;
+}
+
+.how-it-works h5 {
+  font-size: 1rem;
+  margin-bottom: .25rem;
+}
+
+.step-text {
+  font-size: 1.05rem;
+  color: #495057;
+  margin-bottom: 0;
+}
+
+.how-it-works .category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #495057, #343a40) !important;
+}
+
+footer a:hover {
+  color: var(--accent-color) !important;
+}
