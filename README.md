@@ -96,6 +96,4 @@ Incluye:
 - **CSS3** y **Bootstrap 5** para estilos y responsividad.  
 - **Imágenes estáticas** para reforzar la identidad visual.  
 
----"# restaurante-servicio-entregas-inicio" 
-"# restaurante-servicio-entregas-inicio" 
-"# restaurante-servicio-entregas-inicio" 
+---
